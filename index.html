@@ -12,6 +12,12 @@
 </head>
 <body>
 
+  <!-- Ambient Background -->
+  <div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--3" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════════ -->
   <!-- LEFT SIDEBAR                                -->
   <!-- ═══════════════════════════════════════════ -->
@@ -19,7 +25,6 @@
     <div class="sidebar-top">
       <div class="sidebar-logo">
         <h1 class="logo-title">Vizzy</h1>
-        <span class="logo-subtitle">Visual Studio</span>
       </div>
 
       <button class="btn-new-chat" id="btn-new-chat">
@@ -36,43 +41,48 @@
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Brand poster for Summit '26
+          <span class="chat-title">Brand poster for Summit '26</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
         <li class="chat-item">
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Renaissance self-portrait
+          <span class="chat-title">Renaissance self-portrait</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
         <li class="chat-item">
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Children's bedtime story
+          <span class="chat-title">Children's bedtime story</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
         <li class="chat-item">
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Quote poster — Rumi
+          <span class="chat-title">Quote poster — Rumi</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
         <li class="chat-item">
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Vision board 2026
+          <span class="chat-title">Vision board 2026</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
         <li class="chat-item">
           <svg class="chat-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 4.5h10M2 7h6M2 9.5h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
-          Abstract album artwork
+          <span class="chat-title">Abstract album artwork</span>
+          <button class="delete-btn" aria-label="Delete chat">✕</button>
         </li>
       </ul>
     </div>
 
     <div class="sidebar-bottom">
-      <span class="crafted-label">Crafted with intent.</span>
     </div>
   </aside>
 
@@ -98,6 +108,7 @@
           <span class="status-dot"></span>
           <span class="status-text">Online</span>
         </div>
+        <img class="profile-avatar" src="https://i.pravatar.cc/40?img=12" alt="Profile" />
       </div>
     </header>
 
@@ -110,29 +121,34 @@
       </p>
     </section>
 
+    <!-- CONVERSATION / MESSAGES -->
+    <section class="conversation" id="conversation" aria-live="polite">
+      <!-- messages will be appended here -->
+    </section>
+
     <!-- SUGGESTION CARDS -->
     <section class="cards-grid" id="cards-grid">
-      <button class="suggestion-card" id="card-paint">
+      <button class="suggestion-card" id="card-1">
         <span class="card-title">Paint my last year</span>
         <span class="card-subtitle">Turn memories into an impressionist canvas</span>
       </button>
-      <button class="suggestion-card" id="card-renaissance">
+      <button class="suggestion-card" id="card-2">
         <span class="card-title">Renaissance portrait</span>
         <span class="card-subtitle">Classical oil painting from a photo or description</span>
       </button>
-      <button class="suggestion-card" id="card-vision">
+      <button class="suggestion-card" id="card-3">
         <span class="card-title">Vision board</span>
         <span class="card-subtitle">Collage your aspirations into a visual manifesto</span>
       </button>
-      <button class="suggestion-card" id="card-story">
+      <button class="suggestion-card" id="card-4">
         <span class="card-title">Story for my kids</span>
         <span class="card-subtitle">Illustrated bedtime story with custom characters</span>
       </button>
-      <button class="suggestion-card" id="card-quote">
+      <button class="suggestion-card" id="card-5">
         <span class="card-title">Quote poster</span>
         <span class="card-subtitle">Typography art from words that move you</span>
       </button>
-      <button class="suggestion-card" id="card-dream">
+      <button class="suggestion-card" id="card-6">
         <span class="card-title">Dream visualization</span>
         <span class="card-subtitle">Paint the scene from last night's dream</span>
       </button>
@@ -150,7 +166,7 @@
           type="text"
           class="composer-input"
           id="composer-input"
-          placeholder="Tell Vizzy what to imagine, paint, or transform..."
+          placeholder="Tell Vizzy what to imagine, paint, or transform…"
           autocomplete="off"
         >
         <button class="composer-send" id="composer-send" aria-label="Send message">
